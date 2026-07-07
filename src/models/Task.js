@@ -6,7 +6,7 @@ export default class Task {
     this.priority = priority;
     this.checklist = checklist;
     this.completed = false;
-    this.id = this.id = crypto.randomUUID();
+    this.id = crypto.randomUUID();
   }
 
   toggleComplete() {
