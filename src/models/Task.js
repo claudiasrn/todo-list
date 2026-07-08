@@ -24,7 +24,7 @@ export default class Task {
   }
 
   addChecklistItem(name) {
-    this.checklist.push(new ListItem(name));
+    this.checklist.push(new CheckListItem(name));
   }
 
   deleteChecklistItem(id) {
