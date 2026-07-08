@@ -3,8 +3,8 @@ import {loadFromStorage} from './storage.js';
 
 export default class App {
   projects = [];
-  activeProjectId = 0;
-  defaultProjectId = 0;
+  activeProjectId = null;
+  defaultProjectId = null;
 
   addProject(name) {
     this.projects.push(new Project(name));
@@ -12,7 +12,7 @@ export default class App {
 
   deleteProject(id) {
     this.projects = this.projects.filter((p) => p.id !== id);
-    this.activeProjectId = 0;
+    this.activeProjectId = null;
   }
 
   changeDefaultProject(id) {
