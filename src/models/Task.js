@@ -1,14 +1,14 @@
 import CheckListItem from './ChecklistItem.js';
 
 export default class Task {
-  constructor(title, priority, description, dueDate, checklist) {
+  constructor(title, priority, description, dueDate, checklist, completed = false, id = crypto.randomUUID()) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
     this.checklist = checklist;
-    this.completed = false;
-    this.id = crypto.randomUUID();
+    this.completed = completed;
+    this.id = id;
   }
 
   toggleComplete() {
@@ -29,5 +29,10 @@ export default class Task {
 
   deleteChecklistItem(id) {
      this.checklist = this.checklist.filter((i) => i.id !== id);
+  }
+
+  static fromJSON(task) {
+    const checklist = task.checklist.map( (i) => CheckListItem.fromJSON(i) );
+    return new Task(task.title, task.priority, task.description, task.dueDate, checklist, task.completed, task.id);
   }
 }

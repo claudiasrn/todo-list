@@ -1,10 +1,10 @@
 import Task from './Task.js';
 
 export default class Project {
-  constructor(name) {
+  constructor(name, tasks = [], id = crypto.randomUUID()) {
     this.name = name;
-    this.tasks = [];
-    this.id = crypto.randomUUID();
+    this.tasks = tasks;
+    this.id = id;
   }
 
   addTask(title, priority, description = "", dueDate = "", checklist = []) {
@@ -13,5 +13,10 @@ export default class Project {
 
   deleteTask(id) {
     this.tasks = this.tasks.filter((t) => t.id !== id);
+  }
+
+  static fromJSON(project) {
+    const tasks = project.tasks.map( (t) => Task.fromJSON(t) );
+    return new Project(project.name, tasks, project.id);
   }
 }
