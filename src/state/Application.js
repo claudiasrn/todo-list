@@ -16,6 +16,14 @@ export default class App {
   deleteProject(id) {
     this.projects = this.projects.filter((p) => p.id !== id);
     this.activeProjectId = null;
+
+    if (id === this.defaultProjectId) {
+      if (this.projects.length <= 0) {
+        this.defaultProjectId = null;
+      } else {
+        this.defaultProjectId = this.projects[0].id;
+      }
+    }
   }
 
   changeDefaultProject(id) {
