@@ -13,6 +13,7 @@ export function renderProjects(app) {
             : project.name;
         button.addEventListener("click", () => {
             app.activeProjectId = project.id;
+            app.expandedTaskId = null;
             render(app);
         });
         projectRow.append(button);
