@@ -7,5 +7,94 @@
 </head>
 <body>
     <div id="app"></div>
+    <dialog id="add-project-dialog">
+        <h1>NEW PROJECT</h1>
+        <button type="button" id="cancel-add-btn">x</button>
+        <form id="add-project-form">
+            <label>
+                NAME
+                <input type="text" name="name" required>
+            </label>
+            <button type="submit" disabled>CREATE</button>
+        </form>
+    </dialog>
+    <dialog id="add-task-dialog">
+        <h1>NEW TASK</h1>
+        <form id="add-task-form">
+            <label>
+                TITLE
+                <input type="text" name="title" required>
+            </label>
+            <label>
+                DESCRIPTION
+                <input type="text" name="description">
+            </label>
+            <label>
+                DUE DATE
+                <input type="date" name="due-date">
+            </label>
+            <fieldset>
+                <legend>PRIORITY</legend>
+
+                <input type="radio" name="priority" value="high" id="priority-high" class="visually-hidden" />
+                <label for="priority-high">HIGH</label>
+
+                <input type="radio" name="priority" value="medium" id="priority-medium" class="visually-hidden" checked />
+                <label for="priority-medium">MED</label>
+
+                <input type="radio" name="priority" value="low" id="priority-low" class="visually-hidden" />
+                <label for="priority-low">LOW</label>
+            </fieldset>
+            <div class="checklist-add-row">
+                <label for="checklist-item-input">CHECKLIST</label>
+                <div id="checklist-items"></div>
+                <input type="text" name="checklist" id="checklist-item-input" />
+                <button type="button" id="add-checklist-item-btn">+</button>
+            </div>
+            <div class="dialog-actions">
+                <button type="submit" disabled>ADD TASK</button>
+                <button type="button" id="cancel-add-btn">CANCEL</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="edit-task-dialog">
+        <h1>EDIT TASK</h1>
+        <form id="edit-task-form">
+            <label>
+                TITLE
+                <input type="text" name="title" required>
+            </label>
+            <label>
+                DESCRIPTION
+                <input type="text" name="description">
+            </label>
+            <label>
+                DUE DATE
+                <input type="date" name="due-date">
+            </label>
+            <fieldset>
+                <legend>PRIORITY</legend>
+
+                <input type="radio" name="priority" value="high" id="priority-high" class="visually-hidden" />
+                <label for="priority-high">HIGH</label>
+
+                <input type="radio" name="priority" value="medium" id="priority-medium" class="visually-hidden" checked />
+                <label for="priority-medium">MED</label>
+
+                <input type="radio" name="priority" value="low" id="priority-low" class="visually-hidden" />
+                <label for="priority-low">LOW</label>
+            </fieldset>
+            <div class="checklist-add-row">
+                <label for="checklist-item-input">CHECKLIST</label>
+                <div id="checklist-items"></div>
+                <input type="text" name="checklist" id="checklist-item-input" />
+                <button type="button" id="add-checklist-item-btn">+</button>
+            </div>
+            <div class="dialog-actions">
+                <button type="submit" disabled>SAVE CHANGES</button>
+                <button type="button" id="cancel-edit-btn">CANCEL</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>

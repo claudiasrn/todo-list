@@ -10,9 +10,9 @@ export function render(application) {
     app.innerHTML = "";
     
     if (application.projects.length <= 0) {
-        app.append( renderEmptyState() );
+        app.append( renderEmptyState(application) );
     } else {
-        app.append( renderProjects(application.projects) );
+        app.append( renderProjects(application) );
 
         if (application.activeProjectId !== null){
             activeProject = application.findProjectById(application.activeProjectId);
@@ -20,6 +20,6 @@ export function render(application) {
             activeProject = application.findProjectById(application.defaultProjectId);
         }
 
-        app.append( renderTasks(activeProject.tasks) );
+        app.append( renderTasks(application, activeProject) );
     }
 }

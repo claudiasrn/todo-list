@@ -1,4 +1,6 @@
-export function renderEmptyState() {
+import { renderProjectForm } from "./renderProjectForm.js";
+
+export function renderEmptyState(app) {
     const container = document.createElement("div");
 
     const title = document.createElement("h1");
@@ -7,12 +9,15 @@ export function renderEmptyState() {
     const infoText = document.createElement("p");
     infoText.textContent = "Projects keep related tasks together. Give this one a name to lay down the first sheet";
 
-    const button = document.createElement("button");
-    button.textContent = "CREATE A PROJECT";
+    const createBtn = document.createElement("button");
+    createBtn.textContent = "CREATE A PROJECT";
+    createBtn.addEventListener("click", () => {
+        renderProjectForm(app);
+    });
 
     const stateText = document.createElement("p");
     stateText.textContent = "NO PROJECTS ON FILE";
 
-    container.append(title, infoText, button, stateText);
+    container.append(title, infoText, createBtn, stateText);
     return container;
 }

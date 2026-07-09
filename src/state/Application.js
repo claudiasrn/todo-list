@@ -5,9 +5,12 @@ export default class App {
   projects = [];
   activeProjectId = null;
   defaultProjectId = null;
+  expandedTaskId = null;
 
   addProject(name) {
-    this.projects.push(new Project(name));
+    let project = new Project(name)
+    this.projects.push(project);
+    this.activeProjectId = project.id;
   }
 
   deleteProject(id) {
@@ -27,6 +30,10 @@ export default class App {
     const rawProjects = loadFromStorage("projects") ?? [];
     this.projects = rawProjects.map( p => Project.fromJSON(p) );
     this.defaultProjectId = loadFromStorage("defaultProjectId") ?? null;
+  }
+
+  toggleExpandedTask(id) {
+    this.expandedTaskId = this.expandedTaskId === id ? null : id;
   }
 
 }

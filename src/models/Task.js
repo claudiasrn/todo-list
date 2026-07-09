@@ -1,7 +1,7 @@
 import CheckListItem from './ChecklistItem.js';
 
 export default class Task {
-  constructor(title, priority, description, dueDate, checklist, completed = false, id = crypto.randomUUID()) {
+  constructor(title, priority, description = "", dueDate = null, checklist = [], completed = false, id = crypto.randomUUID()) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
@@ -15,12 +15,11 @@ export default class Task {
     this.completed = !this.completed;
   }
 
-  editTask(title, priority, description = "", dueDate = "", checklist = []) {
+  editTask(title, priority, description = "", dueDate = "") {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.checklist = checklist;
   }
 
   addChecklistItem(name) {

@@ -7,7 +7,7 @@ export default class Project {
     this.id = id;
   }
 
-  addTask(title, priority, description = "", dueDate = "", checklist = []) {
+  addTask(title, priority, description = "", dueDate = null, checklist = []) {
     this.tasks.push(new Task(title, priority,description, dueDate, checklist));
   }
 

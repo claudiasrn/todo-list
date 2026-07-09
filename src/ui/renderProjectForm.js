@@ -1,0 +1,38 @@
+import {render} from "./render.js"
+import Application from "../state/Application.js"
+
+const addProjectDialog = document.querySelector("#add-project-dialog");
+const addProjectForm = document.querySelector("#add-project-form");
+const addProjectSubmitBtn = addProjectForm.querySelector('button[type="submit"]');
+const nameInput = document.querySelector('input[name="name"]');
+
+let application;
+
+document.querySelector("#cancel-add-btn").addEventListener("click", () => {
+    addProjectDialog.close();
+    addProjectForm.reset();
+});
+
+addProjectForm.addEventListener("input", () => {
+    addProjectSubmitBtn.disabled = !addProjectForm.checkValidity();
+});
+
+addProjectForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = nameInput.value;
+    application.addProject(name);
+
+    if (application.defaultProjectId === null) {
+        application.defaultProjectId = application.projects[0].id 
+    }
+
+    addProjectDialog.close();
+    addProjectForm.reset();
+    render(application);
+});
+
+export function renderProjectForm(app) {
+    application = app;
+    addProjectDialog.showModal();
+}
