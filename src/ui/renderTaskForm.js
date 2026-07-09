@@ -8,9 +8,9 @@ const addTaskSubmitBtn = addTaskForm.querySelector('button[type="submit"]');
 const titleInput = document.querySelector('input[name="title"]');
 const descriptionInput = document.querySelector('input[name="description"]');
 const dueDateInput = document.querySelector('input[name="due-date"]');
-const checklistInput = document.querySelector('input[name="checklist"]');
-const addChecklistItemBtn = document.querySelector("#add-checklist-item-btn");
-const checkListItems = document.querySelector("#checklist-items")
+const checklistInput = addTaskForm.querySelector('#add-checklist-item-input');
+const addChecklistItemBtn = addTaskForm.querySelector('#add-checklist-item-btn');
+const checkListItems = addTaskForm.querySelector('#add-checklist-items');
 
 let project;
 let application;

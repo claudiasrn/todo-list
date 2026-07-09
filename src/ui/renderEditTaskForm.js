@@ -7,9 +7,9 @@ const editTaskSubmitBtn = editTaskForm.querySelector('button[type="submit"]');
 const titleInput = editTaskForm.querySelector('input[name="title"]');
 const descriptionInput = editTaskForm.querySelector('input[name="description"]');
 const dueDateInput = editTaskForm.querySelector('input[name="due-date"]');
-const checklistInput = editTaskForm.querySelector('input[name="checklist"]');
-const addChecklistItemBtn = editTaskForm.querySelector("#add-checklist-item-btn");
-const checkListItems = editTaskForm.querySelector("#checklist-items")
+const checklistInput = editTaskForm.querySelector('#edit-checklist-item-input');
+const addChecklistItemBtn = editTaskForm.querySelector('#edit-checklist-item-btn');
+const checkListItems = editTaskForm.querySelector('#edit-checklist-items');
 
 let task;
 let application;
