@@ -182,3 +182,43 @@ input::placeholder {
   font-family: 'IBM Plex Mono';
   opacity: 0.2;
 }
+
+.header {
+    margin: 40px;
+    border-bottom:solid 0.5px #6EC6E8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > h1{
+    font-family: "Big Shoulders Stencil";
+    font-size: clamp(2.5rem, 5vw + 1rem, 3rem);
+    color: #EAF2F8;
+    margin: 0;
+}
+
+.header > div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.header > div > div {
+    padding: 15px;
+    border:solid 0.5px #6EC6E8;
+    margin-bottom: 20px;
+}
+
+.header > div > div > p{
+    margin: 0;
+    color: #5C7A94;
+    font-family: 'IBM Plex Sans';
+    font-size: 1rem;
+}
+
+.header > div > div > p + p{
+    color: #EAF2F8;
+    font-family: 'IBM Plex Mono';
+    font-size: 1.1rem;
+}
+

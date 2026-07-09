@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export function renderHeader(app) {
     const header = document.createElement("div");
 
@@ -12,10 +14,12 @@ export function renderHeader(app) {
     titleBlock.append(
         buildField("PROJECTS", String(app.projects.length).padStart(2, "0")),
         buildField("OPEN TASKS", String(openTaskCount).padStart(2, "0")),
-        buildField("DATE", new Date())
+        buildField("DATE", format(new Date(), "MMM dd").toUpperCase() )
     );
 
     header.append(title, titleBlock);
+    header.classList.add("header");
+    
     return header;
 }
 
