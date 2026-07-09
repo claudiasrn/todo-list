@@ -10,7 +10,7 @@ export function renderEmptyState(app) {
     infoText.textContent = "Projects keep related tasks together. Give this one a name to lay down the first sheet";
 
     const createBtn = document.createElement("button");
-    createBtn.textContent = "CREATE A PROJECT";
+    createBtn.textContent = "CREATE PROJECT";
     createBtn.addEventListener("click", () => {
         renderProjectForm(app);
     });

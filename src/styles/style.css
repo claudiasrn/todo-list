@@ -1,0 +1,114 @@
+/* ibm-plex-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/ibm-plex-sans-v23-latin/ibm-plex-sans-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/ibm-plex-sans-v23-latin/ibm-plex-sans-v23-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/ibm-plex-mono-v20-latin/ibm-plex-mono-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/ibm-plex-mono-v20-latin/ibm-plex-mono-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* big-shoulders-stencil-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Big Shoulders Stencil';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/big-shoulders-stencil-v4-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --color-canvas: #0A2540;
+  --color-panel: #0F2F4F;
+  --color-grid-line: rgba(122, 178, 211, 0.12);
+  --color-accent: #6EC6E8;
+  --color-text-primary: #EAF2F8;
+  --color-text-muted: #7FA0B8;
+  --color-priority-high: #E8543E;
+  --color-priority-medium: #E8A33D;
+  --color-priority-low: #5C7A94;
+}
+
+body {
+  background-color: #0A2540;
+  background-image: 
+    linear-gradient(rgba(122, 178, 211, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 178, 211, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app--empty > div{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app--empty > div > h1 {
+    font-family: "Big Shoulders Stencil";
+    font-size: clamp(2.5rem, 5vw + 1rem, 3rem);
+    color: #EAF2F8;
+    margin: 0;
+}
+
+.app--empty > div > h1 + p {
+    font-family: "IBM Plex Sans";
+    font-size: clamp(1rem, 5vw + 1rem, 1.1rem);
+    color: #7FA0B8;
+    max-width: 450px;
+    text-align: center;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.app--empty > div > h1 + p + button {
+    font-family: "IBM Plex MONO";
+    font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
+    background-color: #6EC6E8;
+    border: 0;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 40px;
+    color: #0A2540;
+}
+
+.app--empty > div > h1 + p + button + p {
+    font-family: "IBM Plex MONO";
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+    color: #7FA0B8;
+}
+
+
+
+
+

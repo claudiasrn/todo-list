@@ -13,8 +13,14 @@ export function render(application) {
     saveToStorage("defaultProjectId", application.defaultProjectId);
 
     if (application.projects.length <= 0) {
+        app.classList.remove("app--active");
+        app.classList.add("app--empty");
+
         app.append( renderEmptyState(application) );
     } else {
+        app.classList.remove("app--empty");
+        app.classList.add("app--active");
+
         app.append( renderHeader(application) );
         app.append( renderProjects(application) );
 
