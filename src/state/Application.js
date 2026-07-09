@@ -11,6 +11,10 @@ export default class App {
     let project = new Project(name)
     this.projects.push(project);
     this.activeProjectId = project.id;
+
+    if (this.defaultProjectId === null) {
+        this.defaultProjectId = project.id;
+    }
   }
 
   deleteProject(id) {
@@ -30,6 +34,10 @@ export default class App {
     this.defaultProjectId = this.findProjectById(id).id
   }
 
+  getActiveProjectId() {
+    return this.activeProjectId ?? this.defaultProjectId;
+  }
+
   findProjectById(id) {
     return this.projects.find((p) => p.id === id);
   }
@@ -42,6 +50,10 @@ export default class App {
 
   toggleExpandedTask(id) {
     this.expandedTaskId = this.expandedTaskId === id ? null : id;
+  }
+
+  renameProject(id, name) {
+    this.findProjectById(id).rename(name);
   }
 
 }

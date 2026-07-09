@@ -23,10 +23,6 @@ addProjectForm.addEventListener("submit", (event) => {
     const name = nameInput.value;
     application.addProject(name);
 
-    if (application.defaultProjectId === null) {
-        application.defaultProjectId = application.projects[0].id 
-    }
-
     addProjectDialog.close();
     addProjectForm.reset();
     render(application);

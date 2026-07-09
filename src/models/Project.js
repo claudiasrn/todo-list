@@ -15,6 +15,10 @@ export default class Project {
     this.tasks = this.tasks.filter((t) => t.id !== id);
   }
 
+  rename(name) {
+    this.name = name;
+  }
+
   static fromJSON(project) {
     const tasks = project.tasks.map( (t) => Task.fromJSON(t) );
     return new Project(project.name, tasks, project.id);
