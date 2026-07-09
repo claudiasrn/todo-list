@@ -8,12 +8,14 @@
 <body>
     <div id="app"></div>
     <dialog id="add-project-dialog">
-        <h1>NEW PROJECT</h1>
-        <button type="button" id="cancel-add-btn">x</button>
+        <div class="top">
+            <h1>NEW PROJECT</h1>
+            <button type="button" id="cancel-add-btn">x</button>
+        </div>
         <form id="add-project-form">
             <label>
                 NAME
-                <input type="text" name="name" required>
+                <input type="text" name="name" require placeholder="PROJECT NAME" maxlength="32" autocomplete="off">
             </label>
             <button type="submit" disabled>CREATE</button>
         </form>

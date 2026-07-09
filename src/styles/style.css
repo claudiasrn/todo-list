@@ -108,7 +108,77 @@ body {
     color: #7FA0B8;
 }
 
+dialog::backdrop {
+  background: rgba(10, 37, 64, 0.6);
+  backdrop-filter: blur(4px);
+}
 
+dialog {
+    border:solid 1px #6EC6E8;
+    border-radius: 2px;
+    background-color: #0F2F4F;
+}
 
+dialog .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 0.5px #6EC6E8;
+    margin-bottom: 30px;
+}
 
+dialog .top > h1 {
+    font-family: "Big Shoulders Stencil";
+    margin: 0;
+    font-size: clamp(1rem, 5vw + 1rem, 2rem);
+    color: #EAF2F8;
+}
 
+dialog .top > button {
+    color: #6EC6E8;
+    background-color: transparent;
+    border: 0;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#add-project-form > label{
+    display: flex;
+    flex-direction: column;
+    color: #6EC6E8;
+    font-family: "IBM Plex Sans";
+    font-size: 1rem;
+}
+
+#add-project-form > label > input{
+    background-color: #0A2540;
+    font-family: "IBM Plex Mono";
+    font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
+    border:solid 1px #6EC6E8;
+    border-radius: 2px;
+    color: #5C7A94;
+    padding: 10px 20px;
+}
+
+#add-project-form > label > input:focus-visible{
+    outline: #6EC6E8 2px solid;
+}
+
+#add-project-form > button{
+    margin-top: 30px;
+    font-family: "IBM Plex MONO";
+    font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
+    background-color: #6EC6E8;
+    border: 0;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #0A2540;
+    width: 100%;
+}
+
+input::placeholder {
+  color: #5C7A94;
+  font-family: 'IBM Plex Mono';
+  opacity: 0.2;
+}
