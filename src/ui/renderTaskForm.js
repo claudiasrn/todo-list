@@ -16,7 +16,7 @@ let project;
 let application;
 let checkList = [];
 
-document.querySelector("#cancel-add-btn").addEventListener("click", () => {
+document.querySelector("#cancel-add-task-btn").addEventListener("click", () => {
     addTaskDialog.close();
     addTaskForm.reset();
 });
