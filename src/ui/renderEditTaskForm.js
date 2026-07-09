@@ -60,7 +60,7 @@ function renderChecklist() {
         container.append(deleteListItemBtn);
         deleteListItemBtn.addEventListener("click", () => {
             task.deleteChecklistItem(item.id);
-            renderEditTaskForm(application, task);
+            renderChecklist();
         });
 
         let checkListItemElem = document.createElement("p");
