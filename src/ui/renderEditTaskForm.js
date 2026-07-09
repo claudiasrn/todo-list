@@ -27,7 +27,7 @@ editTaskForm.addEventListener("submit", (event) => {
 
     const title = titleInput.value;
     const description = descriptionInput.value;
-    const dueDate = dueDateInput.value;
+    const dueDate = dueDateInput.value || null;
     const priority = editTaskForm.querySelector('input[name="priority"]:checked').value;
 
     task.editTask(title, priority, description, dueDate);

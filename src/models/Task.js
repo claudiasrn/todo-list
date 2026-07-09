@@ -15,7 +15,7 @@ export default class Task {
     this.completed = !this.completed;
   }
 
-  editTask(title, priority, description = "", dueDate = "") {
+  editTask(title, priority, description = "", dueDate = null) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
