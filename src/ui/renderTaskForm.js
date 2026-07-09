@@ -1,5 +1,4 @@
 import {render} from "./render.js"
-import Project from "../models/Project.js"
 import CheckListItem from "../models/ChecklistItem.js";
 
 const addTaskDialog = document.querySelector("#add-task-dialog");

@@ -1,4 +1,3 @@
-import Application from "../state/Application.js";
 import { renderProjects } from "./renderProjects.js";
 import { renderEmptyState } from "./renderEmptyState.js";
 import { renderTasks } from "./renderTasks.js";

@@ -1,5 +1,4 @@
 import {render} from "./render.js"
-import Task from "../models/Task.js";
 
 const editTaskDialog = document.querySelector("#edit-task-dialog");
 const editTaskForm = document.querySelector("#edit-task-form");

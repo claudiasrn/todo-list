@@ -1,5 +1,4 @@
 import { renderTaskForm } from "./renderTaskForm.js";
-import Task from "../models/Task.js";
 import { render } from "./render.js"
 import { renderExpandedTask } from "./renderExpandedTask.js";
 

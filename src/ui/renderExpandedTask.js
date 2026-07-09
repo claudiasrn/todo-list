@@ -1,7 +1,4 @@
-import CheckListItem from "../models/ChecklistItem.js";
 import { render } from "./render.js";
-import Task from "../models/Task.js";
-import { renderTasks } from "./renderTasks.js";
 import { renderEditTaskForm } from "./renderEditTaskForm.js";
 
 export function renderExpandedTask(app, prj, task, taskContainer) {

@@ -1,5 +1,4 @@
 import {render} from "./render.js"
-import Application from "../state/Application.js"
 
 const addProjectDialog = document.querySelector("#add-project-dialog");
 const addProjectForm = document.querySelector("#add-project-form");
