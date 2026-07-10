@@ -66,11 +66,11 @@
         <form id="edit-task-form">
             <label>
                 TITLE
-                <input type="text" name="title" required>
+                <input type="text" name="title" required placeholder="TASK NAME" maxlength="32" autocomplete="off">
             </label>
             <label>
                 DESCRIPTION
-                <input type="text" name="description">
+                 <textarea name="description" placeholder="Optional notes" maxlength="300" rows="3" autocomplete="off"></textarea>
             </label>
             <label>
                 DUE DATE
@@ -91,11 +91,13 @@
             <div class="checklist-add-row">
                 <label for="edit-checklist-item-input">CHECKLIST</label>
                 <div id="edit-checklist-items"></div>
-                <input type="text" name="checklist" id="edit-checklist-item-input" />
-                <button type="button" id="edit-checklist-item-btn">+</button>
+                <div class="input">
+                    <input type="text" name="checklist" id="edit-checklist-item-input" placeholder="ADD ITEM" maxlength="32" autocomplete="off" />
+                    <button type="button" id="edit-checklist-item-btn" disabled>+</button>
+                </div>
             </div>
             <div class="dialog-actions">
-                <button type="submit" disabled>SAVE CHANGES</button>
+                <button type="submit">SAVE CHANGES</button>
                 <button type="button" id="cancel-edit-btn">CANCEL</button>
             </div>
         </form>

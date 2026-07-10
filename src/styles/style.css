@@ -334,7 +334,8 @@ dialog > h1 {
     margin-bottom: 30px;
 }
 
-#add-task-form > label{
+#add-task-form > label, 
+#edit-task-form > label{
     display: flex;
     flex-direction: column;
     color: #5C7A94;
@@ -342,7 +343,8 @@ dialog > h1 {
     font-size: 0.9rem;
 }
 
-#add-task-form > label > input{
+#add-task-form > label > input, 
+#edit-task-form > label > input{
     background-color: #0A2540;
     font-family: "IBM Plex Mono";
     font-size: clamp(1rem, 5vw + 1rem, 1.2rem);
@@ -353,11 +355,13 @@ dialog > h1 {
     margin-bottom: 20px;
 }
 
-#add-task-form > label > input:focus-visible{
+#add-task-form > label > input:focus-visible, 
+#edit-task-form > label > input:focus-visible{
     outline: #5C7A94 2px solid;
 }
 
-#add-task-form > label > textarea {
+#add-task-form > label > textarea, 
+#edit-task-form > label > textarea {
     background-color: #0A2540;
     font-family: "IBM Plex Mono";
     font-size: 1.1rem;
@@ -369,7 +373,8 @@ dialog > h1 {
     resize: vertical;
 }
 
-#add-task-form > label > textarea:focus-visible {
+#add-task-form > label > textarea:focus-visible, 
+#edit-task-form > label > textarea:focus-visible  {
     outline: #5C7A94 2px solid;
 }
 
@@ -379,12 +384,12 @@ textarea::placeholder {
     opacity: 0.4;
 }
 
-#add-task-form input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(70%) sepia(20%) saturate(500%) hue-rotate(160deg);
     cursor: pointer;
 }
 
-#add-task-form fieldset label {
+fieldset label {
     display: inline-block;
     font-family: "IBM Plex Mono";
     font-size: 1rem;
@@ -397,25 +402,25 @@ textarea::placeholder {
     cursor: pointer;
 }
 
-#add-task-form input[value="high"]:checked + label {
+input[value="high"]:checked + label {
     background: #E8543E;
     color: #0A2540;
     border-color: #E8543E;
 }
 
-#add-task-form input[value="medium"]:checked + label {
+input[value="medium"]:checked + label {
     background: #E8A33D;
     color: #0A2540;
     border-color: #E8A33D;
 }
 
-#add-task-form input[value="low"]:checked + label {
+input[value="low"]:checked + label {
     background: #5C7A94;
     color: #EAF2F8;
     border-color: #5C7A94;
 }
 
-#add-task-form input[type="radio"]:focus-visible + label {
+input[type="radio"]:focus-visible + label {
     outline: 2px solid #6EC6E8;
     outline-offset: 2px;
 }
@@ -429,14 +434,14 @@ textarea::placeholder {
     white-space: nowrap;
 }
 
-#add-task-form fieldset {
+fieldset {
     border: 1px solid rgba(110, 198, 232, 0.4);
     border-radius: 2px;
     padding: 12px;
     margin: 0 0 20px 0;
 }
 
-#add-task-form legend {
+legend {
     color: #5C7A94;
     font-family: "IBM Plex Sans";
     font-size: 0.9rem;
@@ -471,20 +476,26 @@ textarea::placeholder {
     gap: 5px;
 }
 
+.checklist-add-row > .input > input {
+    flex: 1;
+}
+
 .checklist-add-row > .input > button {
     font-family: "IBM Plex Mono";
-    font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
+    font-size: 1.25rem;
     background-color: #6EC6E8;
     border: 0;
     border-radius: 2px;
     text-align: center;
     color: #0A2540;
-    width: 100%;
+    width: 45px;
     height: 45px;
+    flex-shrink: 0;
     margin-top: 1px;
 }
 
-#add-checklist-items > div{
+.checklist-add-row #add-checklist-items > div,
+.checklist-add-row #edit-checklist-items > div {
     display: flex;
     justify-content: space-between;
     font-family: "IBM Plex Sans";
@@ -499,23 +510,27 @@ textarea::placeholder {
     color: #5C7A94;
 }
 
-#add-checklist-items > div > button{
+.checklist-add-row #add-checklist-items > div > button,
+.checklist-add-row #edit-checklist-items > div > button {
     background-color: transparent;
     border: 0;
     color: #5C7A94;
     font-size: 2rem;
 }
 
-#add-checklist-items > div + div{
+.checklist-add-row #add-checklist-items > div + div,
+.checklist-add-row #edit-checklist-items > div + div {
     border-top:solid 1px #5C7A94;
 }
 
-#add-task-form .dialog-actions {
+#add-task-form .dialog-actions,
+#edit-task-form .dialog-actions  {
     display: flex;
     gap: 10px;
 }
 
-#add-task-form .dialog-actions button {
+#add-task-form .dialog-actions button, 
+#edit-task-form .dialog-actions button {
     font-family: "IBM Plex MONO";
     font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
     background-color: #6EC6E8;
@@ -528,7 +543,8 @@ textarea::placeholder {
     flex-grow: 2;
 }
 
-#add-task-form .dialog-actions button + button {
+#add-task-form .dialog-actions button + button, 
+#edit-task-form .dialog-actions button + button {
     background-color: transparent;
     border: solid 1px #6EC6E8;
     color: #6EC6E8;
