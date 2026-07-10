@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div id="app"></div>
+    <dialog id="add-project-dialog">
+        <div class="top">
+            <h1>NEW PROJECT</h1>
+            <button type="button" id="cancel-add-btn">x</button>
+        </div>
+        <form id="add-project-form">
+            <label>
+                NAME
+                <input type="text" name="name" required placeholder="PROJECT NAME" maxlength="32" autocomplete="off">
+            </label>
+            <button type="submit" disabled>CREATE</button>
+        </form>
+    </dialog>
+    <dialog id="add-task-dialog">
+        <h1>NEW TASK</h1>
+        <form id="add-task-form">
+            <label>
+                TITLE
+                <input type="text" name="title" required placeholder="TASK NAME" maxlength="32" autocomplete="off">
+            </label>
+            <label>
+                DESCRIPTION
+                <textarea name="description" placeholder="Optional notes" maxlength="300" rows="3" autocomplete="off"></textarea>
+            </label>
+            <label>
+                DUE DATE
+                <input type="date" name="due-date">
+            </label>
+            <fieldset>
+                <legend>PRIORITY</legend>
+
+                <input type="radio" name="priority" value="high" id="priority-high" class="visually-hidden" />
+                <label for="priority-high">HIGH</label>
+
+                <input type="radio" name="priority" value="medium" id="priority-medium" class="visually-hidden" checked />
+                <label for="priority-medium">MED</label>
+
+                <input type="radio" name="priority" value="low" id="priority-low" class="visually-hidden" />
+                <label for="priority-low">LOW</label>
+            </fieldset>
+            <div class="checklist-add-row">
+                <label for="add-checklist-item-input">CHECKLIST</label>
+                <div id="add-checklist-items"></div>
+                <div class="input">
+                    <input type="text" name="checklist" id="add-checklist-item-input" placeholder="ADD ITEM" maxlength="32" autocomplete="off" />
+                    <button type="button" id="add-checklist-item-btn" disabled>+</button>
+                </div>
+            </div>
+            <div class="dialog-actions">
+                <button type="submit" disabled>ADD TASK</button>
+                <button type="button" id="cancel-add-task-btn">CANCEL</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="edit-task-dialog">
+        <h1>EDIT TASK</h1>
+        <form id="edit-task-form">
+            <label>
+                TITLE
+                <input type="text" name="title" required placeholder="TASK NAME" maxlength="32" autocomplete="off">
+            </label>
+            <label>
+                DESCRIPTION
+                 <textarea name="description" placeholder="Optional notes" maxlength="300" rows="3" autocomplete="off"></textarea>
+            </label>
+            <label>
+                DUE DATE
+                <input type="date" name="due-date">
+            </label>
+            <fieldset>
+                <legend>PRIORITY</legend>
+
+                <input type="radio" name="priority" value="high" id="edit-priority-high" class="visually-hidden" />
+                <label for="edit-priority-high">HIGH</label>
+
+                <input type="radio" name="priority" value="medium" id="edit-priority-medium" class="visually-hidden" checked />
+                <label for="edit-priority-medium">MED</label>
+
+                <input type="radio" name="priority" value="low" id="edit-priority-low" class="visually-hidden" />
+                <label for="edit-priority-low">LOW</label>
+            </fieldset>
+            <div class="checklist-add-row">
+                <label for="edit-checklist-item-input">CHECKLIST</label>
+                <div id="edit-checklist-items"></div>
+                <div class="input">
+                    <input type="text" name="checklist" id="edit-checklist-item-input" placeholder="ADD ITEM" maxlength="32" autocomplete="off" />
+                    <button type="button" id="edit-checklist-item-btn" disabled>+</button>
+                </div>
+            </div>
+            <div class="dialog-actions">
+                <button type="submit">SAVE CHANGES</button>
+                <button type="button" id="cancel-edit-btn">CANCEL</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
