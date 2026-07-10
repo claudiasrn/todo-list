@@ -33,4 +33,5 @@ addProjectForm.addEventListener("submit", (event) => {
 export function renderProjectForm(app) {
     application = app;
     addProjectDialog.showModal();
+    nameInput.focus();
 }
