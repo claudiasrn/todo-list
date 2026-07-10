@@ -25,14 +25,21 @@ export function renderExpandedTask(app, prj, task, taskContainer) {
             let name = document.createElement("p");
             name.textContent = listItem.name;
 
-            if (listItem.completed) completedItems++;
+            if (listItem.completed) {
+                doneBtn.classList.add("done-btn-completed");
+                name.classList.add("name-completed");
+                completedItems++;
+            } else {
+                doneBtn.classList.add("done-btn");
+                name.classList.add("task-name");
+            }
 
             container.append(doneBtn, name);
             checklist.append(container);
         }
-
         label.textContent = "CHECKLIST - " + task.checklist.length + "/" + completedItems;
 
+        checklistElem.classList.add("checklist");
         checklistElem.append(label, checklist);
     }
 
@@ -49,5 +56,13 @@ export function renderExpandedTask(app, prj, task, taskContainer) {
         render(app);
     });
 
-    taskContainer.append(description, checklistElem, editBtn, deleteBtn);
+    const expandedContent = document.createElement("div");
+    expandedContent.classList.add("expanded-content");
+
+    const buttons = document.createElement("div");
+    buttons.append(editBtn, deleteBtn)
+
+    expandedContent.append(description, checklistElem, buttons);
+
+    taskContainer.append(expandedContent);
 }

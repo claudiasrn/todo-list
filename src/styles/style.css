@@ -534,3 +534,253 @@ textarea::placeholder {
     color: #6EC6E8;
     flex-grow: 0;
 }
+
+.tasks {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100vw;
+    margin-bottom: 30px;
+}
+
+.top-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px ;
+    border-top: #5C7A94 1px dashed;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.top-part > p {
+    margin: 0;
+    color: #5C7A94;
+    font-family: 'IBM Plex Sans';
+    font-size: 1rem;
+}
+
+.top-part > button {
+    height: 40px;
+    margin: 0;
+    padding:0 10px;
+    background-color: transparent;
+    font-family: "IBM Plex Mono";
+    font-size: 1rem;
+    border:solid 1px #6EC6E8;
+    border-radius: 2px;
+    color: #6EC6E8;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px ;
+    gap: 10px;
+}
+
+.tasks-container > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tasks-container > div > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.tasks-container > div > div > .done-btn{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: solid 1px #6EC6E8;
+    border-radius: 2px;
+}
+
+.tasks-container > div > div > .task-name{
+    margin: 0;
+    color: #EAF2F8;
+    font-family: 'IBM Plex Sans';
+    font-size: 1.1rem;
+}
+
+.tasks-container > div > div > p{
+    color: #5C7A94;
+    font-family: 'IBM Plex Mono';
+    font-size: 1rem;
+    padding: 15px 0;
+    text-align: end;
+    width: 60px;
+    margin: 0;
+}
+
+.tasks-container > div > div > p + p{
+    width: 5px;
+    margin: 0;
+}
+
+.tasks-container > div > div > .priority{
+    padding: 5px 5px;
+    font-size: 1rem;
+    width: 70px;
+}
+
+.priority[data-priority="high"] {
+  color: #E8543E;
+}
+
+.priority[data-priority="medium"] {
+  color: #E8A33D;
+}
+
+.priority[data-priority="low"] {
+  color: #5C7A94;
+}
+
+.tasks-container > div > div > button{
+    border: 0;
+    background-color: transparent;
+    color: #6EC6E8;
+    font-size: 1.5rem;
+}
+
+.tasks-container > div + div {
+    border-top: 1px solid #5C7A94;
+}
+
+.tasks-container > div > div > .done-btn-completed{
+    background-color: #6EC6E8;
+    width: 20px;
+    height: 20px;
+    border: solid 1px #6EC6E8;
+    border-radius: 2px;
+}
+
+.tasks-container > div > div > .name-completed{
+    margin: 0;
+    color: #5C7A94;
+    font-family: 'IBM Plex Sans';
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    padding: 15px 0;
+}
+
+.expired {
+  color: #E8543E;
+}
+
+.tasks-container > div > div > .expired{
+    color: #E8543E;
+}
+
+.tasks-container > div > div > .expires-today{
+    color: #E8A33D;
+}
+
+.expanded-content {
+    flex-basis: 100%;
+    width: 100%;
+}
+
+.tasks-container > div.expanded {
+    background: #0F2F4F;
+    border: 1px solid #6EC6E8;
+    border-radius: 4px;
+    padding: 14px;
+}
+
+.tasks-container > .expanded > .expanded-content {
+    display: flex;
+}
+
+.tasks-container > div.expanded >  .expanded-content > div > button{
+    height: 30px;
+    margin: 0;
+    padding:0 10px;
+    background-color: transparent;
+    font-family: "IBM Plex Mono";
+    font-size: 1rem;
+    border:solid 1px #6EC6E8;
+    border-radius: 2px;
+    color: #6EC6E8;
+    margin: 0 10px;
+}
+
+.tasks-container > div.expanded >  .expanded-content > div > button + button{
+    border:solid 1px #E8543E;
+    color: #E8543E;
+}
+
+.tasks-container > div.expanded >  .expanded-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tasks-container > div.expanded >  .expanded-content > p{
+    border-left: 1px dashed #5C7A94;
+    padding: 0 10px;
+    margin: 10px 10px;
+    color: #EAF2F8;
+    font-family: 'IBM Plex Sans';
+    font-size: 1rem;
+    width: auto;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > p{
+    margin: 0;
+    color: #5C7A94;
+    font-family: 'IBM Plex Sans';
+    font-size: 1rem;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > button{
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: solid 1px #6EC6E8;
+    border-radius: 2px;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > .done-btn-completed{
+    background-color: #6EC6E8;
+    border: solid 1px #6EC6E8;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > p{
+    margin: 0;
+    color: #EAF2F8;
+    font-family: 'IBM Plex Sans';
+    font-size: 1rem;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > .name-completed{
+    color: #5C7A94;
+    text-decoration: line-through;
+}
+
