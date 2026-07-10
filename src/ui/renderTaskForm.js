@@ -5,7 +5,7 @@ const addTaskDialog = document.querySelector("#add-task-dialog");
 const addTaskForm = document.querySelector("#add-task-form");
 const addTaskSubmitBtn = addTaskForm.querySelector('button[type="submit"]');
 const titleInput = addTaskForm.querySelector('input[name="title"]');
-const descriptionInput = addTaskForm.querySelector('input[name="description"]');
+const descriptionInput = addTaskForm.querySelector('textarea[name="description"]');
 const dueDateInput = addTaskForm.querySelector('input[name="due-date"]');
 const checklistInput = addTaskForm.querySelector('#add-checklist-item-input');
 const addChecklistItemBtn = addTaskForm.querySelector('#add-checklist-item-btn');
@@ -18,6 +18,7 @@ let checkList = [];
 document.querySelector("#cancel-add-task-btn").addEventListener("click", () => {
     addTaskDialog.close();
     addTaskForm.reset();
+    addChecklistItemBtn.disabled = true;
 
     checkList = [];
     renderChecklist();
@@ -39,11 +40,23 @@ addTaskForm.addEventListener("submit", (event) => {
 
     addTaskDialog.close();
     addTaskForm.reset();
+    addChecklistItemBtn.disabled = true;
 
     checkList = [];
     renderChecklist();
 
     render(application);
+});
+
+checklistInput.addEventListener("input", () => {
+    addChecklistItemBtn.disabled = checklistInput.value.trim() === "";
+});
+
+checklistInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addChecklistItemBtn.click();
+    }
 });
 
 addChecklistItemBtn.addEventListener("click", () => {
@@ -53,6 +66,7 @@ addChecklistItemBtn.addEventListener("click", () => {
     let checkListItem = new CheckListItem(name)
     checkList.push(checkListItem);
     checklistInput.value = "";
+    addChecklistItemBtn.disabled = true;
 
     renderChecklist();
 });
@@ -60,12 +74,19 @@ addChecklistItemBtn.addEventListener("click", () => {
 function renderChecklist() {
     checkListItems.innerHTML = "";
 
+    if (checkList.length === 0) {
+        let emptyText = document.createElement("p");
+        emptyText.textContent = "No items yet.";
+        emptyText.classList.add("checklist-empty");
+        checkListItems.append(emptyText);
+        return;
+    }
+
     for (let item of checkList) {
         let container = document.createElement("div");
 
         let deleteListItemBtn = document.createElement("button");
         deleteListItemBtn.textContent = "-";
-        container.append(deleteListItemBtn);
         deleteListItemBtn.addEventListener("click", () => {
             checkList = checkList.filter((i) => i.id !== item.id);
             renderChecklist();
@@ -73,7 +94,7 @@ function renderChecklist() {
 
         let checkListItemElem = document.createElement("p");
         checkListItemElem.textContent = item.name;
-        container.append(checkListItemElem);
+        container.append(checkListItemElem, deleteListItemBtn);
 
         checkListItems.append(container);
     }
@@ -82,6 +103,7 @@ function renderChecklist() {
 export function renderTaskForm(app, prj) {
     application = app;
     project = prj;
+    renderChecklist(); 
     addTaskDialog.showModal();
 }
 
