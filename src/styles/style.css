@@ -92,12 +92,22 @@ body {
     font-family: "IBM Plex MONO";
     font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
     background-color: #6EC6E8;
-    border: 0;
     border-radius: 2px;
     text-align: center;
     padding: 10px 20px;
     margin: 40px;
     color: #0A2540;
+    border: 1px solid #6EC6E8;
+}
+
+.app--empty > div > h1 + p + button:focus-visible {
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
+.app--empty > div > h1 + p + button:hover {
+    background-color: transparent;
+    color: #6EC6E8;
 }
 
 .app--empty > div > h1 + p + button + p {
@@ -142,6 +152,16 @@ dialog .top > button {
     margin-bottom: 10px;
 }
 
+dialog .top > button:focus-visible {
+    outline: 2px solid #E8543E;
+    outline-offset: 2px;
+    border-radius: 50px;    
+}
+
+dialog .top > button:hover {
+    color: #E8543E;
+}
+
 #add-project-form > label{
     display: flex;
     flex-direction: column;
@@ -169,12 +189,22 @@ dialog .top > button {
     font-family: "IBM Plex MONO";
     font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
     background-color: #6EC6E8;
-    border: 0;
     border-radius: 2px;
     text-align: center;
     padding: 10px 20px;
     color: #0A2540;
     width: 100%;
+    border: 1px solid #6EC6E8;
+}
+
+#add-project-form > button:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
+#add-project-form > button:hover{
+    background-color: transparent;
+    color: #6EC6E8;
 }
 
 input::placeholder {
@@ -243,6 +273,17 @@ input::placeholder {
     border-radius: 2px;
 }
 
+.projects button:hover {
+    background-color: #7FA0B8;
+    color: #6EC6E8;
+    border: solid 1px #6EC6E8;
+}
+
+.projects button:focus-visible       {
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
 .projects > div > div{
     display: flex;
 }
@@ -258,13 +299,22 @@ input::placeholder {
 
 .projects .active > div > button{
     background-color: #6EC6E8;
-    border: 0;
+    border: 1px solid #6EC6E8;
     color: #0F2F4F;
     margin: 5px 0;
 }
 
+.projects .active > div > button:hover{
+    background-color: transparent;
+    color: #6EC6E8;
+}
+
 .projects .add-project-btn {
     border: dashed 1px;
+}
+
+.projects .add-project-btn:hover {
+    border: solid 1px #6EC6E8;
 }
 
 .projects .active .panel {
@@ -309,9 +359,24 @@ input::placeholder {
     color: #6EC6E8;
 }
 
+.projects .active .panel > button:hover{
+    background-color: #6EC6E8;
+    color: #0F2F4F;
+}
+
 .projects .active .panel > button + button{
     border:solid 1px #E8543E;
     color: #E8543E;
+}
+
+.projects .active .panel > button + button:hover{
+    background-color: #E8543E;
+    color: #0F2F4F;
+}
+
+.projects .active .panel > button + button:focus-visible{
+    outline: 2px solid #E8543E;
+    outline-offset: 2px;
 }
 
 button:disabled {
@@ -484,7 +549,7 @@ legend {
     font-family: "IBM Plex Mono";
     font-size: 1.25rem;
     background-color: #6EC6E8;
-    border: 0;
+    border: 1px solid #6EC6E8;
     border-radius: 2px;
     text-align: center;
     color: #0A2540;
@@ -492,6 +557,16 @@ legend {
     height: 45px;
     flex-shrink: 0;
     margin-top: 1px;
+}
+
+.checklist-add-row > .input > button:hover {
+    background-color: transparent;
+    color: #6EC6E8;
+}
+
+.checklist-add-row > .input > button:focus-visible {
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
 }
 
 .checklist-add-row #add-checklist-items > div,
@@ -515,7 +590,18 @@ legend {
     background-color: transparent;
     border: 0;
     color: #5C7A94;
-    font-size: 2rem;
+    font-size: 2rem; 
+    height: 30px;   
+}
+
+.checklist-add-row #add-checklist-items > div > button:hover,
+.checklist-add-row #edit-checklist-items > div > button:hover {
+    color: #6EC6E8;
+}
+
+.checklist-add-row #add-checklist-items > div > button:focus-visible,
+.checklist-add-row #edit-checklist-items > div > button:focus-visible {
+    outline: 2px solid #6EC6E8;
 }
 
 .checklist-add-row #add-checklist-items > div + div,
@@ -534,7 +620,7 @@ legend {
     font-family: "IBM Plex MONO";
     font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
     background-color: #6EC6E8;
-    border: 0;
+    border: 1px #6EC6E8 solid;
     border-radius: 2px;
     text-align: center;
     padding: 10px 20px;
@@ -543,12 +629,37 @@ legend {
     flex-grow: 2;
 }
 
+#add-task-form .dialog-actions button:hover, 
+#edit-task-form .dialog-actions button:hover {
+    background-color: transparent;
+    color: #6EC6E8;
+}
+
+#add-task-form .dialog-actions button:focus-visible, 
+#edit-task-form .dialog-actions button:focus-visible {
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
 #add-task-form .dialog-actions button + button, 
 #edit-task-form .dialog-actions button + button {
     background-color: transparent;
     border: solid 1px #6EC6E8;
     color: #6EC6E8;
     flex-grow: 0;
+}
+
+#add-task-form .dialog-actions button + button:hover, 
+#edit-task-form .dialog-actions button + button:hover {
+    border: #E8543E solid 1px;
+    background-color: #E8543E;
+    color: #0F2F4F;
+}
+
+#add-task-form .dialog-actions button + button:focus-visible, 
+#edit-task-form .dialog-actions button + button:focus-visible {
+    outline: 2px solid #E8543E;
+    outline-offset: 2px;
 }
 
 .tasks {
@@ -587,6 +698,16 @@ legend {
     color: #6EC6E8;
 }
 
+.top-part > button:hover {
+    background-color: #6EC6E8;
+    color: #0F2F4F;
+}
+
+.top-part > button:focus-visible {
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
 .tasks-container {
     display: flex;
     flex-direction: column;
@@ -615,6 +736,16 @@ legend {
     height: 20px;
     background-color: transparent;
     border: solid 1px #6EC6E8;
+    border-radius: 2px;
+}
+
+.tasks-container > div > div > .done-btn:hover{
+    background-color: #6EC6E8;
+}
+
+.tasks-container > div > div > .done-btn:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
     border-radius: 2px;
 }
 
@@ -665,6 +796,16 @@ legend {
     font-size: 1.5rem;
 }
 
+.tasks-container > div > div > button:hover{
+    color: aqua;
+}
+
+.tasks-container > div > div > button:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+    border-radius: 20px;
+}
+
 .tasks-container > div + div {
     border-top: 1px solid #5C7A94;
 }
@@ -674,6 +815,16 @@ legend {
     width: 20px;
     height: 20px;
     border: solid 1px #6EC6E8;
+    border-radius: 2px;
+}
+
+.tasks-container > div > div > .done-btn-completed:hover{
+    background-color: transparent;
+}
+
+.tasks-container > div > div > .done-btn-completed:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
     border-radius: 2px;
 }
 
@@ -727,9 +878,29 @@ legend {
     margin: 0 10px;
 }
 
+.tasks-container > div.expanded >  .expanded-content > div > button:hover{
+    background-color: #6EC6E8;
+    color: #0F2F4F;
+}
+
+.tasks-container > div.expanded >  .expanded-content > div > button:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
 .tasks-container > div.expanded >  .expanded-content > div > button + button{
     border:solid 1px #E8543E;
     color: #E8543E;
+}
+
+.tasks-container > div.expanded >  .expanded-content > div > button + button:hover{
+    color: #0F2F4F;
+    background-color: #E8543E;
+}
+
+.tasks-container > div.expanded >  .expanded-content > div > button + button:focus-visible{
+    outline: 2px solid #E8543E;
+    outline-offset: 2px;
 }
 
 .tasks-container > div.expanded >  .expanded-content{
@@ -783,9 +954,22 @@ legend {
     border-radius: 2px;
 }
 
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > button:hover{
+    background-color: #6EC6E8;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > button:focus-visible{
+    outline: 2px solid #6EC6E8;
+    outline-offset: 2px;
+}
+
 .tasks-container > div.expanded >  .expanded-content > .checklist > div > div > .done-btn-completed{
     background-color: #6EC6E8;
     border: solid 1px #6EC6E8;
+}
+
+.tasks-container > div.expanded >  .expanded-content > .checklist > div > div > .done-btn-completed:hover{
+    background-color: transparent;
 }
 
 .tasks-container > div.expanded >  .expanded-content > .checklist > div > div > p{
