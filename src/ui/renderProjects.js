@@ -1,5 +1,6 @@
 import { renderProjectForm } from "./renderProjectForm.js";
 import { render } from "./render.js"
+import { createElement, Star } from "lucide";
 
 let openPanel = null;
 let openManageBtn = null;
@@ -23,9 +24,18 @@ export function renderProjects(app) {
         buttonRow.classList.add("button-row");
 
         let button = document.createElement("button");
-        button.textContent = project.id === app.defaultProjectId
-            ? "★ " + project.name.toUpperCase()
-            : project.name.toUpperCase();
+        const isDefaultProject = project.id === app.defaultProjectId;
+
+        if (isDefaultProject) {
+            const starIcon = createElement(Star, { width: 14, height: 14, fill: "currentColor"});
+            starIcon.classList.add("default-star");
+            button.append(starIcon);
+        }
+
+        const buttonLabel = document.createElement("span");
+        buttonLabel.textContent = project.name.toUpperCase();
+        button.append(buttonLabel);
+
         button.addEventListener("click", () => {
             app.activeProjectId = project.id;
             app.expandedTaskId = null;

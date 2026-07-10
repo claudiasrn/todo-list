@@ -2,6 +2,7 @@ import { renderTaskForm } from "./renderTaskForm.js";
 import { render } from "./render.js"
 import { renderExpandedTask } from "./renderExpandedTask.js";
 import { format, isPast, isToday } from "date-fns";
+import { createElement, ChevronDown, ChevronUp } from "lucide";
 
 export function renderTasks(app, prj) {
     let completed = 0;
@@ -48,7 +49,11 @@ export function renderTasks(app, prj) {
         const isExpanded = task.id === app.expandedTaskId;
 
         let toggleBtn = document.createElement("button");
-        toggleBtn.textContent = isExpanded ? "^" : "⌄";
+        const toggleIcon = createElement(isExpanded ? ChevronUp : ChevronDown, {
+            width: 16,
+            height: 16,
+        });
+        toggleBtn.append(toggleIcon);
         toggleBtn.addEventListener("click", () => {
             app.toggleExpandedTask(task.id);
             render(app);
