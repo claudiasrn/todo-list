@@ -114,7 +114,7 @@ dialog::backdrop {
 }
 
 dialog {
-    border:solid 1px #6EC6E8;
+    border:solid 1px #5C7A94;
     border-radius: 2px;
     background-color: #0F2F4F;
 }
@@ -123,7 +123,7 @@ dialog .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 0.5px #6EC6E8;
+    border-bottom: solid 0.5px #5C7A94;
     margin-bottom: 30px;
 }
 
@@ -145,23 +145,23 @@ dialog .top > button {
 #add-project-form > label{
     display: flex;
     flex-direction: column;
-    color: #6EC6E8;
+    color: #5C7A94;
     font-family: "IBM Plex Sans";
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 #add-project-form > label > input{
     background-color: #0A2540;
     font-family: "IBM Plex Mono";
     font-size: clamp(1.25rem, 5vw + 1rem, 1.5rem);
-    border:solid 1px #6EC6E8;
+    border:solid 1px #5C7A94;
     border-radius: 2px;
     color: #5C7A94;
     padding: 10px 20px;
 }
 
 #add-project-form > label > input:focus-visible{
-    outline: #6EC6E8 2px solid;
+    outline: #5C7A94 2px solid;
 }
 
 #add-project-form > button{
@@ -184,8 +184,8 @@ input::placeholder {
 }
 
 .header {
-    margin: 40px;
-    border-bottom:solid 0.5px #6EC6E8;
+    margin: 20px 40px;
+    border-bottom:solid 0.5px #5C7A94;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -201,12 +201,13 @@ input::placeholder {
 .header > div {
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    padding-bottom: 10px;
 }
 
 .header > div > div {
     padding: 15px;
-    border:solid 0.5px #6EC6E8;
-    margin-bottom: 20px;
+    border:solid 0.5px #5C7A94;
 }
 
 .header > div > div > p{
@@ -222,3 +223,104 @@ input::placeholder {
     font-size: 1.1rem;
 }
 
+.projects {
+    margin: 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.projects button {
+    height: 40px;
+    margin: 0;
+    padding:0 10px;
+    background-color: transparent;
+    color: #5C7A94;
+    font-size: 1rem;
+    font-family: 'IBM Plex Mono';
+    border:solid 0.5px #5C7A94;
+    border-radius: 2px;
+}
+
+.projects > div > div{
+    display: flex;
+}
+
+.projects .active > div {
+    display: flex;
+    gap : 10px;
+}
+
+.projects .active > div + div{
+    gap: 0;
+}
+
+.projects .active > div > button{
+    background-color: #6EC6E8;
+    border: 0;
+    color: #0F2F4F;
+    margin: 5px 0;
+}
+
+.projects .add-project-btn {
+    border: dashed 1px;
+}
+
+.projects .active .panel {
+    background-color: #0F2F4F;
+    flex-direction: column;
+    margin-top: 10px;
+    border: solid #6EC6E8 1px;
+    border-radius: 2px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 50px;
+}
+
+.projects .active .panel > p {
+    color: #5C7A94;
+    font-family: "IBM Plex Sans";
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.projects .active .panel > input{
+    background-color: #0A2540;
+    font-family: "IBM Plex Mono";
+    font-size: 1rem;
+    border:solid 1px #5C7A94;
+    border-radius: 2px;
+    color: #5C7A94;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.projects .active .panel > input:focus-visible{
+    outline: #5C7A94 2px solid;
+}
+
+.projects .active .panel > button{
+    background-color: transparent;
+    font-family: "IBM Plex Mono";
+    font-size: 1rem;
+    border:solid 1px #6EC6E8;
+    border-radius: 2px;
+    color: #6EC6E8;
+}
+
+.projects .active .panel > button + button{
+    border:solid 1px #E8543E;
+    color: #E8543E;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+.projects .active {
+    display: flex;
+    flex-direction: column;
+}

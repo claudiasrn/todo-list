@@ -10,6 +10,7 @@ let application;
 document.querySelector("#cancel-add-btn").addEventListener("click", () => {
     addProjectDialog.close();
     addProjectForm.reset();
+    addProjectSubmitBtn.disabled = true;
 });
 
 addProjectForm.addEventListener("input", () => {
@@ -24,6 +25,8 @@ addProjectForm.addEventListener("submit", (event) => {
 
     addProjectDialog.close();
     addProjectForm.reset();
+    addProjectSubmitBtn.disabled = true;
+
     render(application);
 });
 
